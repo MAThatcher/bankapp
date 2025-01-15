@@ -8,9 +8,9 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		  <sonar.projectKey>bankapp</sonar.projectKey>
-  		  <sonar.host.url>https://mthatcher108.ngrok.io/</sonar.host.url>
- 		  <sonar.login>${env.SONAR_TOKEN}</sonar.login>
+		<sonar.projectKey>bankapp</sonar.projectKey>
+  		<sonar.host.url>https://mthatcher108.ngrok.io/</sonar.host.url>
+ 		<sonar.login>${env.SONAR_TOKEN}</sonar.login>
 	</properties>
 	
 
@@ -31,34 +31,35 @@
 	<properties>
 
 </properties>
-	<build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.sonarsource.scanner.maven</groupId>
-                    <artifactId>sonar-maven-plugin</artifactId>
-                </plugin>
-                <plugin>
-                    <groupId>org.jacoco</groupId>
-                    <artifactId>jacoco-maven-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>clean install sonar:sonar -Dsonar.projectKey=bankapp -Dsonar.host.url=https://mthatcher108.ngrok.io -Dsonar.login=${env.SONAR_TOKEN}</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>report</id>
-                            <phase>verify</phase>
-                            <goals>
-                                <goal>report</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+<build>
+	<pluginManagement>
+	    <plugins>
+		<plugin>
+		    <groupId>org.sonarsource.scanner.maven</groupId>
+		    <artifactId>sonar-maven-plugin</artifactId>
+		    <goal>clean install sonar:sonar -Dsonar.projectKey=bankapp -Dsonar.host.url=https://mthatcher108.ngrok.io -Dsonar.login=${env.SONAR_TOKEN}</goal>
+		</plugin>
+		<plugin>
+		    <groupId>org.jacoco</groupId>
+		    <artifactId>jacoco-maven-plugin</artifactId>
+		    <executions>
+			<execution>
+			    <goals>
+				<goal>prepare-agent</goal>
+			    </goals>
+			</execution>
+			<execution>
+			    <id>report</id>
+			    <phase>verify</phase>
+			    <goals>
+				<goal>report</goal>
+			    </goals>
+			</execution>
+		    </executions>
+		</plugin>
+	    </plugins>
+	</pluginManagement>
+</build>
 
 
 
