@@ -37,7 +37,10 @@
 		<plugin>
 		    <groupId>org.sonarsource.scanner.maven</groupId>
 		    <artifactId>sonar-maven-plugin</artifactId>
-		    <goal>clean install sonar:sonar -Dsonar.projectKey=bankapp -Dsonar.host.url=https://mthatcher108.ngrok.io -Dsonar.login=${env.SONAR_TOKEN}</goal>
+		    <goals>
+			    <goal>clean install sonar:sonar -Dsonar.projectKey=bankapp -Dsonar.host.url=https://mthatcher108.ngrok.io -Dsonar.login=${env.SONAR_TOKEN}</goal>
+		    </goals>
+		    
 		</plugin>
 		<plugin>
 		    <groupId>org.jacoco</groupId>
