@@ -8,12 +8,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<sonar.projectKey>bankapp</sonar.projectKey>
-  		<sonar.host.url>https://mthatcher108.ngrok.io/</sonar.host.url>
- 		<sonar.login>${env.SONAR_TOKEN}</sonar.login>
 	</properties>
-	
-
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
 		<dependency>
@@ -28,42 +23,4 @@
 			<version>19.3.0.0</version>
 		</dependency>
 	</dependencies>
-	<properties>
-
-</properties>
-<build>
-	<pluginManagement>
-	    <plugins>
-		<plugin>
-		    <groupId>org.sonarsource.scanner.maven</groupId>
-		    <artifactId>sonar-maven-plugin</artifactId>
-		    <goals>
-			    <goal>clean install sonar:sonar -Dsonar.projectKey=bankapp -Dsonar.host.url=https://mthatcher108.ngrok.io -Dsonar.login=${env.SONAR_TOKEN}</goal>
-		    </goals>
-		    
-		</plugin>
-		<plugin>
-		    <groupId>org.jacoco</groupId>
-		    <artifactId>jacoco-maven-plugin</artifactId>
-		    <executions>
-			<execution>
-			    <goals>
-				<goal>prepare-agent</goal>
-			    </goals>
-			</execution>
-			<execution>
-			    <id>report</id>
-			    <phase>verify</phase>
-			    <goals>
-				<goal>report</goal>
-			    </goals>
-			</execution>
-		    </executions>
-		</plugin>
-	    </plugins>
-	</pluginManagement>
-</build>
-
-
-
 </project>
